@@ -1,0 +1,33 @@
+USERID=$(id -u)
+if [ $USERID -ne 0 ]
+then
+    echo "ERROR:: Sudo access needed for this task"
+    exit 1
+else
+    dnf list installed mysql
+    if [ $? -ne 0 ]
+    then
+        dnf install mysql -y
+        if [ $? -ne 0 ]
+        then
+            echo "Mysql installation failure"
+        else
+            echo "Mysql installation sucess"
+        fi 
+    else
+        echo "Mysql already installed"
+    fi 
+    dnf list installed git
+    if [ $? -ne 0 ]
+    then
+        dnf install git -y
+        if [ $? -ne 0 ]
+        then
+            echo "git installation failure"
+        else
+            echo "git installation sucess"
+        fi 
+    else
+        echo "git already installed"
+    fi 
+fi 
