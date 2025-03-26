@@ -1,7 +1,7 @@
 userid=$(id -u)
 if [ $userid -ne 0 ]
 then
-    echo -e "$(\e[31m) login as a root user"
+    echo -e "\e[31m login as a root user"
 else
 
     for package in $@
