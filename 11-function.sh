@@ -2,25 +2,30 @@
 
 USERID=$(id -u)
 
+R= \e[31m
+G= \e[32m
+Y= \e[33m
+N= \e[0m
+
 validation(){
     if [ $1 -ne 0 ]
     then
         dnf install $2 -y
         if [ $? -ne 0 ]
         then
-            echo "installing $2... failed!"
+            echo -e "installing $2... $R failed! $N"
         else
-            echo " installing $2... Sucess!"
+            echo -e " installing $2... $G Sucess $N!"
         
         fi
     else
-        echo " $2 already installed"
+        echo -e " $2 already $Y installed $N"
     
     fi
 }
 if [ $USERID -ne 0 ]
 then
-    echo "You need root access to perform this task"
+    echo -e " $R You need root access to perform this task $N "
     exit 1
 
 else
