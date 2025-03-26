@@ -20,3 +20,4 @@ else
             echo " $package already installed "
         fi
     done
+fi
