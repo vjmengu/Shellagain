@@ -1,10 +1,6 @@
 #!/bin/bash
 
 USERID=$(id -u)
-if [ $USERID -ne 0 ]
-then
-    echo "You need root access to perform this task"
-    exit 1
 
 validation(){
     if [ $1 -ne 0 ]
@@ -17,20 +13,23 @@ validation(){
             echo " installing $2... Sucess!"
         
         fi
+    else
+        echo " $2 already installed"
+    
+    fi
 }
+if [ $USERID -ne 0 ]
+then
+    echo "You need root access to perform this task"
+    exit 1
+
 else
     dnf list installed mysql -y
     validation $? "mysql"
-    else
-        echo " mysql already installed"
-    
-    fi
-
     dnf list installed git -y
     validation $? "git"
-    else
-        echo " git already installed"
+fi
+
     
-    fi
 
     
