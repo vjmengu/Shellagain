@@ -18,4 +18,5 @@ else
             fi
         else
             echo " $package already installed "
+        fi
     done
