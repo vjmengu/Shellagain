@@ -24,9 +24,9 @@ then
 else
     dnf install nginx -y &>$logs
     validate $? "nginx installation"
-    dnf enable nginx &>$logs
+    systemctl enable nginx &>$logs
     validate $? "nginx enable"
-    dnf start nginx &>$logs
+    systemctl start nginx &>$logs
     validate $? "nginx start"
     rm -rf /usr/share/nginx/html/* &>$logs
     curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
