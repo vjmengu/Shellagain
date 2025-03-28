@@ -20,7 +20,7 @@ then
 else
     dnf module disable nodejs -y
     dnf module enable nodjs:20 -y
-    dnf install nodjs -y
+    dnf install nodejs -y
     systemctl enable nodejs
     systemctl start nodejs
     id expense
