@@ -7,9 +7,9 @@ N="\e[0m"
 validate(){
     if [ $1 -ne 0 ]
     then
-        echo "$R $2 .... Failed $N "
+        echo -e "$R $2 .... Failed $N "
     else
-        echo "$G $2 ..... Success $N
+        echo -e "$G $2 ..... Success $N"
     fi
 }
 userid=$(id -u)
@@ -31,7 +31,7 @@ else
         mysql_secure_installation --set-root-pass ExpenseApp@1
         validate $? " password setup "
     else
-        echo " $G Password Already Set!!!, skipping setup $N " 
+        echo -e " $G Password Already Set, skipping setup $N " 
     fi
 fi
 
