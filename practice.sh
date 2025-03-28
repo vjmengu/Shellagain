@@ -3,7 +3,6 @@
 deletef=$(find /home/ec2-user/logs -name "*.log" -mtime +14)
 echo "files to be deleted are $deletef"
 while read -r f 
-{
 do
     echo " deleting $f "
     rm -rf $f
@@ -15,5 +14,3 @@ do
     fi
 
 done <<< $deletef
-    
-}
