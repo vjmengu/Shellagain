@@ -19,7 +19,7 @@ then
     exit 1
 else
 
-     dnf install mysql-server -y
+    dnf install mysql-server -y
     validate $? "mysql-server"
     systemctl enable mysqld
     validate $? "enable mysql-server"
@@ -29,9 +29,9 @@ else
     if [ $? -ne 0 ]
     then
         mysql_secure_installation --set-root-pass ExpenseApp@1
-        validate $? "password setup "
+        validate $? " password setup "
     else
-        echo "$G Password Already Set!!!, skipping setup $N " 
+        echo " $G Password Already Set!!!, skipping setup $N " 
     fi
 fi
 
