@@ -19,7 +19,7 @@ then
     exit 1
 else
     dnf module disable nodejs -y
-    dnf module enable nodjs:20 -y
+    dnf module enable nodejs:20 -y
     dnf install nodejs -y
     
     id expense
