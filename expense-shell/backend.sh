@@ -23,7 +23,7 @@ else
     dnf install nodejs -y
     
     id expense
-    if [$? -ne 0 ]
+    if [ $? -ne 0 ]
     then
         useradd expense
     else
