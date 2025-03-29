@@ -42,10 +42,9 @@ files=$(find $source_dir -name "*.log" -mtime +$days)
 
 if [ -n "$files" ]
 then
-    echo -e "$Y there are no files older than $days $N"
+     echo -e "$G files older than $days are:: $files $N"
 else
-    echo -e "$G files older than $days are:: $files $N"
-    
+    echo -e "$Y there are no files older than $days $N"
 fi
 
 
