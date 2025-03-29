@@ -43,7 +43,7 @@ zip_file="$destin_dir/app-log-$timestamp.zip"
 if [ -n "$files" ]
 then
      echo -e "$G files older than $days are:: $files $N"
-     $files | zip -@ $zip_file
+     find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file
 
 else
     echo -e "$Y there are no files older than $days days $N"
