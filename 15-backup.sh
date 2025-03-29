@@ -46,10 +46,10 @@ then
     find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file
     if [ -f $zip_file ]
     then
-       while -r read file
+       while read -r file
        do
            echo -e "$R deleting $file"
-           rm -rf $file
+            rm -rf $file
        done <<< $files
     else
        echo -e "$R Zip file not created $N"
