@@ -9,7 +9,7 @@ usage()
 {
     echo -e "\e[31m usage:: 15-backup.sh <source files path> <destination file path>"
 }
-if [ $# -ln 2 ]
+if [ $# -lt 2 ]
 then
     usage
 fi
