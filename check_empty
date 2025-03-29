@@ -1,0 +1,9 @@
+#!/bin/bash
+var="I am real"
+if [ -n "$var" ]
+then
+    echo " not empty "
+    echo $var
+else
+    echo " its empty "
+fi
