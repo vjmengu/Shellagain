@@ -13,7 +13,7 @@ N="\e[0m"
 
 source_dir=$1
 destin_dir=$2
-days={$3:-14}
+days=${3:-14}
 usage()
 {
     echo -e "\e[31m usage:: 15-backup.sh <source files path> <destination file path> \e[0m"
