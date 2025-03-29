@@ -42,8 +42,18 @@ zip_file="$destin_dir/app-log-$timestamp.zip"
 
 if [ -n "$files" ]
 then
-     echo -e "$G files older than $days are:: $files $N"
-     find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file
+    echo -e "$G files older than $days are:: $files $N"
+    find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file
+    if [ -f $zip_file ]
+    then
+       while -r read file
+       do
+           echo -e "$R deleting $file"
+           rm -rf $file
+       done <<< $files
+    else
+       echo -e "$R Zip file not created $N"
+    fi
 
 else
     echo -e "$Y there are no files older than $days days $N"
