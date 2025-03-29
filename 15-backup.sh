@@ -38,7 +38,16 @@ fi
 
 files=$(find $source_dir -name "*.log" -mtime +$days)
 
-echo -e "$R files older than $days are:: $files $N"
+
+
+if [ -n "$files" ]
+then
+    echo -e "$Y there are no files older than $days $N"
+else
+    echo -e "$G files older than $days are:: $files $N"
+    
+fi
+
 
 
 
