@@ -14,7 +14,7 @@ do
     
     if [ $memory -ge $Threshold ]
     then
-        MSG+=" location is :: $location , Memory is :: $memory"
+        MSG+=" location is :: $location , Memory is :: $memory \n"
     fi
 done <<< $Disk_Usage
 
