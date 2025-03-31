@@ -10,6 +10,9 @@ while read -r line
 do
     memory=$(echo $line|cut -d " " -f6)
     location=$(echo $line|cut -d " " -f7)
-    echo " location is :: $location , Memory is :: $memory"
     
+    if [ $memory -ge $Threshold ]
+    then
+        echo " location is :: $location , Memory is :: $memory"
+    fi
 done <<< $Disk_Usage
