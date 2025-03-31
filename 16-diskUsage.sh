@@ -5,6 +5,7 @@
 
 Disk_Usage=$(df -hT | grep xfs)
 Threshold=5
+MSG=""
 
 while read -r line
 do
@@ -13,6 +14,8 @@ do
     
     if [ $memory -ge $Threshold ]
     then
-        echo " location is :: $location , Memory is :: $memory"
+        MSG+=" location is :: $location , Memory is :: $memory"
     fi
 done <<< $Disk_Usage
+
+echo -e "$MSG"
