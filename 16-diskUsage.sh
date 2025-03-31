@@ -8,8 +8,8 @@ Threshold=5
 
 while read -r line
 do
-    memory=$(Disk_Usage|cut -d " " -f6)
-    location=$(Disk_Usage|cut -d " " -f7)
+    memory=$(echo $line|cut -d " " -f6)
+    location=$(echo $line|cut -d " " -f7)
     echo " location is :: $location , Memory is :: $memory"
     
 done <<< $Disk_Usage
