@@ -8,7 +8,7 @@ Threshold=5
 
 while read -r line
 do
-    memory=$(echo $line|cut -d " " -f6)
+    memory=$(echo $line|cut -d " " -f6| cut -d "%" -f1)
     location=$(echo $line|cut -d " " -f7)
     
     if [ $memory -ge $Threshold ]
