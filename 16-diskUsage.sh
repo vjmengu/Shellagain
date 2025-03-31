@@ -19,3 +19,5 @@ do
 done <<< $Disk_Usage
 
 echo -e "$MSG"
+
+echo "Listing high disk usage:: $MSG" | mutt -s "DiskUsageAlert!!!" livelongstronghealthy@gmail.com
