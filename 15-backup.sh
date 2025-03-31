@@ -53,6 +53,7 @@ then
        done <<< $files
     else
        echo -e "$R Zip file not created $N"
+       exit 1
     fi
 
 else
